@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    
+        <body>
+         
+         <header>
+            <div class="center">
+               <div class='card2'>
+                <div class="menu">
+                    <a href="">Início</a>
+                    <a href="">Meus Dados</a>
+                    <a href="">Vendas do Dia</a>
+                    <button onclick="sair()"> SAIR </button>
+                </div>
+                </div>
+            </div>
+        </header>
+
+        <div class='container'>
+         
+          <div class='card'>
+            <div class="logo"><img src="logopequena.png" alt=""></div>
+            <h1> Cadastro de Produtos </h1>
+            
+            <div id='msgError'></div>
+            <div id='msgSuccess'></div>
+            
+                    <div class="label-float">
+                       <input type="text" id="nome" placeholder=" " required>
+                       <label id="labelNome" for="nome">Produto</label>
+                    </div>
+        
+                    <div class="label-float">
+                       <input type="float" id="usuario" placeholder=" " required>
+                       <label id="labelUsuario" for="usuario">Quantidade(em KG)</label>
+                    </div>
+                    
+                    <div class="label-float">
+                       <input type="date" id="data" placeholder=" " required>
+                       <label id="dataprevista" for="data">Data Prevista</label>
+                       
+                       
+                    </div>
+                    
+                    <div class='justify-center'>
+                       <button onclick='cadastrar()'>Cadastrar</button>
+                    </div>
+        
+            
+          </div>
+          </div>
+
+        </body>
+
+</body>
+</html>
