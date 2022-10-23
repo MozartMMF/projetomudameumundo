@@ -56,7 +56,7 @@ body {
 h1{
   text-align: center;
   margin-bottom: 20px;
-  color: #0d009c
+  color: #3a5a40
 }
 
 .label-float input{
@@ -64,7 +64,7 @@ h1{
   padding: 5px 5px;
   display: inline-block;
   border: 0;
-  border-bottom: 2px solid #0d009c;
+  border-bottom: 2px solid #3a5a40;
   background-color: transparent;
   outline: none;
   min-width: 180px;
@@ -82,11 +82,11 @@ h1{
 }
 
 .label-float input:focus{
-  border-bottom: 2px solid #4038a0;
+  border-bottom: 2px solid #3a5a40;
 }
 
 .label-float label{
-  color: #0d009c;
+  color: #3a5a40;
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -99,13 +99,13 @@ h1{
 .label-float input:valid + label{
   font-size: 13px;
   margin-top: 0;
-  color: #4038a0
+  color: #3a5a40
 }
 
 button{
   background-color: transparent;
-  border-color: #0d009c;
-  color: #0d009c;
+  border-color: #3a5a40;
+  color: #3a5a40;
   padding: 7px;
   font-weight: bold;
   font-size: 12pt;
@@ -117,7 +117,7 @@ button{
 }
 
 button:hover{
-  background-color: #0d009c;
+  background-color: #3a5a40;
   color: #fff;
 }
 
@@ -131,7 +131,7 @@ button:hover{
   top: 15px;
   right: 10px;
   cursor: pointer;
-  color: #0d009c;
+  color: #3a5a40;
 }
 
 #msgError{
