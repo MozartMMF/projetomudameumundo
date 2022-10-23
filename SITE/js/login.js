@@ -44,7 +44,7 @@ function entrar(){
   })
    
   if(email.value == userValid.email && senha.value == userValid.senha){
-    window.location.href = 'logado.html'
+    window.location.href = 'cadastroprodutos.html'
     
     let mathRandom = Math.random().toString(16).substr(2)
     let token = mathRandom + mathRandom
