@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <form>
+            <h1>Login</h1>
+            <label>E-mail</label><br>
+            <input type="email" id="email" placeholder="Entre com o e-mail">
+            <br>
+            <label>Senha</label><br>
+            <input type="password" id="senha" placeholder="Entre com a senha">
+            <br><br>
+            <input type="submit" id="idUsuario" value="Entrar">
+        </form>
+    </div>
+
+    <script>
+        // const getBtn = document.getElementById('get')
+        // const postBtn = document.getElementById('post')
+        const inputEntrar = document.getElementById('idUsuario')
+        const inputEmail = document.getElementById('email')
+        const inputSenha = document.getElementById('senha')
+
+        const baseUrl = 'http://localhost:8383/'
+
+        inputEntrar.addEventListener('click', getUsuario)
+        // getBtn.addEventListener('click', getInfo)
+        // postBtn.addEventListener('click', postInfo)
+
+        async function getUsuario(e) {
+            e.preventDefault()
+
+            const res = await fetch(baseUrl + 'usuario', {  // Rota 3
+                method: 'GET'
+            })
+
+            let encontrou = false
+            const data = await res.json()
+            const Usuario = JSON.parse(data) // transforma texto em Object
+            for (const item in Usuario) {
+                if (inputEmail.value == Usuario[item].email && inputSenha.value == Usuario[item].senha) {
+                    encontrou = true
+                }
+            }
+            if (!encontrou) {
+                alert('Entrada incorreta!')
+                return
+            }
+
+            alert('Entrada efetuada com sucesso!')
+            window.location = baseUrl + 'usuarios.html' + '?usuario=' + inputEmail.value
+        }
+
+        // async function getInfo(e) {
+        //     e.preventDefault()
+
+        //     const res = await fetch(baseUrl + 'info/Selmo?key=Ola', {   // Rota 1
+        //         method: 'GET'
+        //     })
+        //     console.log(res)
+        //     const data = await res.json()
+        //     inputEmail.value = data.informa
+        // }
+        // async function postInfo(e) {
+        //     e.preventDefault()
+        //     if (inputEmail.value == '') { return }
+
+        //     const res = await fetch(baseUrl, {  // Rota 2
+        //         method: 'POST',
+        //         headers: {
+        //             "Content-type": 'application/json'
+        //         },
+        //         body: JSON.stringify({
+        //             parcel: inputEmail.value
+        //         }) 
+        //     })
+        // }
+    </script>
+</body>
+</html>

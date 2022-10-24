@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+</head>
+<body>
+    <p id="idLog">Usuário logado:</p>
+    <h1>Usuários</h1>
+
+    <form action="/index.html">
+        <button id="listar">Listar</button>
+        <br>
+        <textarea id="story" name="story" rows="5" cols="33">
+        </textarea>
+        <br><br>
+        <input type="submit" value="Retorno">
+    </form>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const parUsuario = urlParams.get("usuario")
+
+        const paragrafo = document.getElementById('idLog')
+        const getListar = document.getElementById('listar')
+        const texto = document.getElementById('story')
+
+        paragrafo.innerHTML += parUsuario
+
+        const baseUrl = 'http://localhost:8383/'
+
+        getListar.addEventListener('click', getUsuario)
+
+        async function getUsuario(e) {
+            e.preventDefault()
+
+            const res = await fetch(baseUrl + 'usuario', {
+                method: 'GET'
+            })
+            const data = await res.json()
+            try {
+                var usuarios = JSON.parse(data) // transforma texto em Object
+                // for in 
+                for (const item in usuarios) {
+                    if (item == 0) {
+                        texto.innerHTML = `${usuarios[item].nome} - ${usuarios[item].email}`
+                    } else {
+                        texto.innerHTML += `\n${usuarios[item].nome} - ${usuarios[item].email}` // (\n=pula linha, \r=retorno do carro)
+                    }                    
+                }
+                //                
+            } catch (e) {
+                console.log(e)
+            }    
+        }
+    </script>
+</body>
+</html>

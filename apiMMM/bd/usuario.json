@@ -1,0 +1,4 @@
+[{"email": "pedro@gmail.com", "senha": "123", "nome": "Pedro", "perfil": "Admin", "funcao": "dev"},
+{"email": "maria@gmail.com", "senha": "123", "nome": "Maria", "perfil": "Convidado", "funcao": "produtor"},
+{"email": "luiz@gmail.com", "senha": "123", "nome": "Luiz", "perfil": "Convidado", "funcao": "produtor"},
+{"email": "carlos@gmail.com", "senha": "123", "nome": "Carlos", "perfil": "Convidado", "funcao": "agronomo"}]

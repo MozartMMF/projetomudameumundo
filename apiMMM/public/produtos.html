@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+
+    <form action="/index.html">
+        <button id="listar">Listar</button>
+        <br>
+        <textarea id="story" name="story" rows="5" cols="33">
+        </textarea>
+        <br><br>
+        <input type="submit" value="Retorno">
+    </form>
+
+    <script>
+        const getListar = document.getElementById('listar')
+        const texto = document.getElementById('story')
+
+        const baseUrl = 'http://localhost:8383/'
+
+        getListar.addEventListener('click', getProduto)
+
+        async function getProduto(e) {
+            e.preventDefault()
+
+            const res = await fetch(baseUrl + 'produto', {
+                method: 'GET'
+            })
+            const data = await res.json()
+            try {
+                var produtos = JSON.parse(data) // transforma texto em Object
+                // for in 
+                for (const item in produtos) {
+                    if (item == 0) {
+                        texto.innerHTML = `${produtos[item].descricao}`
+                    } else {
+                        texto.innerHTML += `\n${produtos[item].descricao}` // (\n=pula linha, \r=retorno do carro)
+                    }                    
+                }
+                //                
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    </script>
+</body>
+</html>
