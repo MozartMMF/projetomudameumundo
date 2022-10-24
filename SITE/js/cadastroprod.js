@@ -19,9 +19,9 @@ function cadastroprod(){
     function listarEstoque() {
         if (typeof(Storage) !== "undefined") {
             let listaProd = localStorage.getItem("listaProd");
-            document.write("<h1>Compras solicitadas:</h1>")
+            document.write("<h1>Vendas solicitadas:</h1>")
             if (listaProd == null)
-                document.write("<h3>Ainda não há nenhum item no estoque</h3>");
+                document.write("<h3>Ainda não há nenhuma venda solicitada</h3>");
             else {
                 listaProd = JSON.parse(listaProd);
                 listaProd.forEach(produto => {
@@ -34,5 +34,5 @@ function cadastroprod(){
                 });
             }
         } 
-        else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");    
+        else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar as vendas!");    
     }
