@@ -19,7 +19,7 @@ function cadastroprod(){
     function listarEstoque() {
         if (typeof(Storage) !== "undefined") {
             let listaProd = localStorage.getItem("listaProd");
-            document.write("<h1>Estoque:</h1>")
+            document.write("<h1>Compras solicitadas:</h1>")
             if (listaProd == null)
                 document.write("<h3>Ainda não há nenhum item no estoque</h3>");
             else {
